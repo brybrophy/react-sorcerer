@@ -1,0 +1,29 @@
+{
+  "name": "react-sorcerer",
+  "version": "0.0.0",
+  "description": "react-sorcerer",
+  "main": "dist/react-sorcerer.min.js",
+  "homepage": "https://github.com/brybrophy/react-sorcerer",
+  "authors": [
+    "Bryan Brophy"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "package.json",
+    "src",
+    "node_modules",
+    "example",
+    "test"
+  ]
+}
