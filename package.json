@@ -38,7 +38,8 @@
     "release": "NODE_ENV=production gulp release",
     "start": "gulp dev",
     "test": "echo \"no tests yet\" && exit 0",
-    "watch": "gulp watch:lib"
+    "watch": "gulp watch:lib",
+    "version": "npm run build && git add -A dist"
   },
   "keywords": [
     "react",
