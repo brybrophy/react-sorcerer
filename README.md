@@ -92,6 +92,10 @@ const devices = {
 
 A fallback placeholder image that is supplied to the img onError event if your img fails to load.
 
+examples:
+
+`/images/errorImg.jpg || https://api.example.com/images/errorImg.jpg`
+
 **maxDevice**
 
 `React.PropTypes.string`
