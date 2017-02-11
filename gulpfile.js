@@ -27,7 +27,7 @@ var taskConfig = {
 		dist: 'example/dist',
 		files: [
 			'index.html',
-			'images',
+			'images/*.{gif,jpg,png,svg}',
 			'.gitignore'
 		],
 		scripts: [
