@@ -7,12 +7,12 @@ var App = React.createClass({
 		return (
 			<div>
 				<Sorcerer
-                    alt="sorcerer"
+					alt="sorcerer"
 					className="example-img"
-                    defaultSrc="/images/defaultImg.jpg"
-                    minDevice="mobileSm"
+					defaultSrc="/images/defaultImg.jpg"
+					minDevice="mobileSm"
 					maxDevice="desktopXl"
-                />
+				/>
 			</div>
 		);
 	}
