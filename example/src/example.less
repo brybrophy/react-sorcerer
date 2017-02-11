@@ -26,7 +26,7 @@ a:hover {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 3840px;
-	padding: 1em;
+	padding: 1em 0;
 }
 
 .footer {
@@ -45,41 +45,86 @@ h1 {
 	font-size: 4em;
 }
 
-img {
+.image-container {
+	height: 100vh;
 	left: 0;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
-	width: 100%;
 	z-index: -10;
+}
+
+.example-image {
+	min-height: 100%;
+	min-width: 100%;
 }
 
 li, p {
 	color: #444;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	font-weight: 300;
 	width: 70vw;
-	margin: 30px auto;
+	margin: 0 auto 25px auto;
 }
 
 li {
-	margin: 10px auto;
+	margin: 5px auto;
 }
 
 ul {
 	list-style-type: none;
+	margin-bottom: 40px;
 	padding: 0;
 }
 
-.container {
-	align-content: center;
-	display: flex;
-	justify-content: center;
+.overlay {
+	background: #e5e5e5;
+	border-radius: 5px;
+	// height: 30vh;
+	opacity: .6;
+	padding-bottom: 20px;
 }
 
-.overlay {
-	background: white;
-	border-radius: 5px;
-	margin-top: 45px;
-	opacity: .6;
-	padding: 50px;
+@media only screen and (max-width : 767px) {
+	li, p {
+		font-size: 1.1em;
+	}
+}
+
+@media only screen and (min-width : 1919px) {
+	li, p {
+		font-size: 1.6em;
+	}
+}
+
+@media only screen and (min-width : 2559px) {
+	h1 {
+		font-size: 6em;
+		margin-top: 50px;
+	}
+
+	h2 {
+		font-size: 3em;
+		margin: 0 0 30px 0;
+	}
+
+	li, p {
+		font-size: 2.2em;
+	}
+}
+
+@media only screen and (min-width : 3839px) {
+	h1 {
+		font-size: 7em;
+		margin-top: 150px;
+	}
+
+	h2 {
+		font-size: 4em;
+		margin: 0 0 30px 0;
+	}
+
+	li, p {
+		font-size: 3.4em;
+	}
 }
