@@ -39,7 +39,8 @@
     "start": "gulp dev",
     "test": "echo \"no tests yet\" && exit 0",
     "watch": "gulp watch:lib",
-    "version": "npm run build && git add -A dist"
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push origin HEAD && git push --tags"
   },
   "keywords": [
     "react",
