@@ -37,7 +37,7 @@ export default class Sorcerer extends React.Component {
 			<img
 				alt={this.props.alt}
 				className={this.props.className ? this.props.className : ''}
-				src={this.props.defaultSrc}
+				src={`${this.props.srcPath}.${this.props.srcExt}`}
 				srcSet={this.getSrcSet()}
 				onError={this.props.errorSrc ? this.addErrorSrc : null}
 			/>
@@ -48,10 +48,10 @@ export default class Sorcerer extends React.Component {
 Sorcerer.propTypes = {
 	alt: React.PropTypes.string.isRequired,
 	className: React.PropTypes.string,
-	srcExt: React.PropTypes.string.isRequired,
-	srcPath: React.PropTypes.string.isRequired,
 	devices: React.PropTypes.object,
 	errorSrc: React.PropTypes.string,
 	maxDevice: React.PropTypes.string,
-	minDevice: React.PropTypes.string
-}
+	minDevice: React.PropTypes.string,
+	srcExt: React.PropTypes.string.isRequired,
+	srcPath: React.PropTypes.string.isRequired
+};
