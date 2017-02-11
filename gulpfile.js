@@ -13,7 +13,7 @@ var initGulpTasks = require('react-component-gulp-tasks');
 var taskConfig = {
 
 	component: {
-		name: 'ReactSorcerer',
+		name: 'Sorcerer',
 		dependencies: [
 			'classnames',
 			'react',
@@ -27,6 +27,7 @@ var taskConfig = {
 		dist: 'example/dist',
 		files: [
 			'index.html',
+			'images',
 			'.gitignore'
 		],
 		scripts: [

@@ -1,12 +1,18 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var ReactSorcerer = require('react-sorcerer');
+var Sorcerer = require('react-sorcerer');
 
 var App = React.createClass({
 	render () {
 		return (
 			<div>
-				<ReactSorcerer />
+				<Sorcerer
+                    alt="sorcerer"
+					className="example-img"
+                    defaultSrc="/images/defaultImg.jpg"
+                    minDevice="mobileSm"
+					maxDevice="desktopXl"
+                />
 			</div>
 		);
 	}

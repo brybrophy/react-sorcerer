@@ -33,9 +33,9 @@ npm install react-sorcerer --save
 __EXPLAIN USAGE HERE__
 
 ```
-var ReactSorcerer = require('react-sorcerer');
+var Sorcerer = require('react-sorcerer');
 
-<ReactSorcerer>Example</ReactSorcerer>
+<Sorcerer>Example</Sorcerer>
 ```
 
 ### Properties

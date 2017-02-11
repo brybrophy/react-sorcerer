@@ -5,16 +5,23 @@
 </head>
 <body>
 	<div class="container">
-		<h1>react-sorcerer</h1>
-		<h2><a href="https://github.com/brybrophy/react-sorcerer">View project on GitHub</a></h2>
+		<div class="overlay">
+			<h1>React Sorcerer</h1>
+			<h2><a href="https://github.com/brybrophy/react-sorcerer">View project on GitHub</a></h2>
+			<p>
+				Sorcerer is a react component that builds a srcset for your img tags. Source sets make sure that you always have the right size image for the window size, increase site performance, and save your users bandwidth.
+			</p>
+			<ul>
+				<li>Open your network tab</li>
+				<li>Shrink your window all the way down to one side</li>
+				<li>Hit command-shift-r</li>
+				<li>Drag your window back to full size</li>
+			</ul>
+			<p>You will see that when your window was small, the browser only downloaded a small image file. As your window became bigger, the browser downloaded the corresponding larger files.</p>
+			
+		</div>
 		<!-- the example app is rendered into this div -->
 		<div id="app"></div>
-		<div class="hint">
-			<!-- put any hints about your component example here -->
-		</div>
-		<div class="footer">
-			Copyright &copy; 2017 Bryan Brophy.
-		</div>
 	</div>
 	<script src="common.js"></script>
 	<script src="bundle.js"></script>
