@@ -13,22 +13,18 @@ export default class Sorcerer extends React.Component {
 	}
 
 	getSrcSet() {
-		const { defaultSrc, maxDevice, minDevice } = this.props;
+		const { srcExt, srcPath, maxDevice, minDevice } = this.props;
 		const devices = this.props.devices ? this.props.devices : getDevices();
-		const srcName = defaultSrc.split('.')[0];
-		const srcExt = defaultSrc.split('.')[1];
-
-		let srcSetStr = '';
-
 		const min = minDevice ? devices[minDevice] : 320;
 		const max = maxDevice ? devices[maxDevice] : 3840;
+		let srcSetStr = '';
 
 		for (let device in devices) {
 			if (devices[device] >= min && devices[device] <= max) {
 				if (devices[device] === max) {
-					srcSetStr += `${srcName}_${device}.${srcExt} ${devices[device]}w`;
+					srcSetStr += `${srcPath}_${device}.${srcExt} ${devices[device]}w`;
 				} else {
-					srcSetStr += `${srcName}_${device}.${srcExt} ${devices[device]}w, `;
+					srcSetStr += `${srcPath}_${device}.${srcExt} ${devices[device]}w, `;
 				}
 			}
 		}
@@ -52,7 +48,8 @@ export default class Sorcerer extends React.Component {
 Sorcerer.propTypes = {
 	alt: React.PropTypes.string.isRequired,
 	className: React.PropTypes.string,
-	defaultSrc: React.PropTypes.string.isRequired,
+	srcExt: React.PropTypes.string.isRequired,
+	srcPath: React.PropTypes.string.isRequired,
 	devices: React.PropTypes.object,
 	errorSrc: React.PropTypes.string,
 	maxDevice: React.PropTypes.string,
