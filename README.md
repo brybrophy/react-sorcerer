@@ -1,5 +1,7 @@
 # react-sorcerer
 
+**Version 2.0.0 is currently in the works. Version 2 will take care of the image processing for you so that you only need to supply 1 image file. This should speed up production and make your (or your designer's) life simpler!)**
+
 Sorcerer is a react component that builds a srcset for your img tags.
 
 Source sets make sure that the browser never downloads an image that is too small or too large. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
