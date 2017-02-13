@@ -7,6 +7,8 @@ class Sorcerer extends React.Component {
 		super(props);
 
 		this.addErrorSrc = this.addErrorSrc.bind(this);
+		this.getDefaultSizes = this.getDefaultSizes.bind(this);
+		this.imageProcessor = this.imageProcessor.bind(this);
 	}
 
 	addErrorSrc(e) {
