@@ -14,4 +14,4 @@ function getDefaultSizes() {
     return sizes;
 }
 
-module.exports = { getDefaultSizes };
+module.exports = getDefaultSizes;

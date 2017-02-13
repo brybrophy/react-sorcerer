@@ -32,4 +32,4 @@ function imageProcessor(
     });
 }
 
-module.exports = { imageProcessor };
+module.exports = imageProcessor;

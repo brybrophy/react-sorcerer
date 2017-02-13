@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import { getDefaultSizes } from './defaultSizes';
-import { imageProcessor } from './imageProcessor';
+import getDefaultSizes from './defaultSizes';
+import imageProcessor from './imageProcessor';
 
 class Sorcerer extends React.Component {
 	constructor(props) {
@@ -11,6 +11,10 @@ class Sorcerer extends React.Component {
 
 	addErrorSrc(e) {
 		e.target.src = this.props.errorSrc;
+	}
+
+	getDefaultSizes() {
+		return getDefaultSizes;
 	}
 
 	getSrcSet() {
@@ -33,6 +37,10 @@ class Sorcerer extends React.Component {
 		return srcSetStr;
 	}
 
+	imageProcessor() {
+		return imageProcessor;
+	}
+
 	render() {
 		return (
 			<img
@@ -46,7 +54,7 @@ class Sorcerer extends React.Component {
 	}
 }
 
-export default { Sorcerer };
+export default Sorcerer;
 
 Sorcerer.propTypes = {
 	alt: React.PropTypes.string.isRequired,

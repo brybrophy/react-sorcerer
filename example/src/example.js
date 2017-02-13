@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Sorcerer = require('react-sorcerer').Sorcerer;
+var Sorcerer = require('react-sorcerer');
 
 var App = React.createClass({
 	render () {
