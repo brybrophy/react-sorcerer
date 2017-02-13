@@ -1,22 +1,15 @@
 import React, { PropTypes } from 'react';
 import getDefaultSizes from './defaultSizes';
-import imageProcessor from './imageProcessor';
 
 class Sorcerer extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.addErrorSrc = this.addErrorSrc.bind(this);
-		this.getDefaultSizes = this.getDefaultSizes.bind(this);
-		this.imageProcessor = this.imageProcessor.bind(this);
 	}
 
 	addErrorSrc(e) {
 		e.target.src = this.props.errorSrc;
-	}
-
-	getDefaultSizes() {
-		return getDefaultSizes;
 	}
 
 	getSrcSet() {

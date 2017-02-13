@@ -10,7 +10,7 @@ function imageProcessor(config) {
         coverage,
         customSizes
     } = config;
-    
+
     const sizes = customSizes ? customSizes : getDefaultSizes();
 
     gulp.task(coverage.toString(), function() {
@@ -26,8 +26,9 @@ function imageProcessor(config) {
                     }
                 }, {
                     errorOnEnlargement: false
+                    
                 }))
-                .pipe(gulp.dest(outputPath))
+                .pipe(gulp.dest(outputPath ? outputPath : inputPath + '/optimized'))
             );
         }
         return mergeStream(tasks);
