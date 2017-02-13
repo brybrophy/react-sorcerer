@@ -11,6 +11,9 @@ var taskConfig = {
 		name: 'Sorcerer',
 		dependencies: [
 			'classnames',
+			"gulp",
+			"gulp-responsive",
+			"merge-stream",
 			'react',
 			'react-dom'
 		],

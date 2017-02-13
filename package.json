@@ -13,7 +13,6 @@
     "url": "https://github.com/brybrophy/react-sorcerer/issues"
   },
   "dependencies": {
-    "async": "^2.1.4",
     "classnames": "^2.1.2",
     "gulp": "^3.9.0",
     "gulp-responsive": "^2.7.0",
