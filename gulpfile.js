@@ -7,7 +7,7 @@ var config100 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/100',
-	outputPath: 'example/dist/images',
+	outputPath: 'example/dist/images/100/optimized',
 	coverage: 100
 }
 

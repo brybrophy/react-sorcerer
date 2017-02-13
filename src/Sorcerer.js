@@ -13,7 +13,7 @@ class Sorcerer extends React.Component {
 	}
 
 	getSrcSet() {
-		const { srcExt, srcPath, maxDevice, minDevice } = this.props;
+		const { srcExt, srcName, srcPath, maxDevice, minDevice } = this.props;
 		const sizes = this.props.sizes ? this.props.sizes : getDefaultSizes();
 		const min = minDevice ? sizes[minDevice] : 320;
 		const max = maxDevice ? sizes[maxDevice] : 3840;
@@ -22,9 +22,9 @@ class Sorcerer extends React.Component {
 		for (let size in sizes) {
 			if (sizes[size] >= min && sizes[size] <= max) {
 				if (sizes[size] === max) {
-					srcSetStr += `${srcPath}_${size}.${srcExt} ${sizes[size]}w`;
+					srcSetStr += `${srcPath}/optimized/${srcName}_${size}.${srcExt} ${sizes[size]}w`;
 				} else {
-					srcSetStr += `${srcPath}_${size}.${srcExt} ${sizes[size]}w, `;
+					srcSetStr += `${srcPath}/optimized/${srcName}_${size}.${srcExt} ${sizes[size]}w, `;
 				}
 			}
 		}
@@ -41,7 +41,7 @@ class Sorcerer extends React.Component {
 			<img
 				alt={this.props.alt}
 				className={this.props.className ? this.props.className : ''}
-				src={`${this.props.srcPath}.${this.props.srcExt}`}
+				src={`${this.props.srcPath}/${this.props.srcName}.${this.props.srcExt}`}
 				srcSet={this.getSrcSet()}
 				onError={this.props.errorSrc ? this.addErrorSrc : null}
 			/>

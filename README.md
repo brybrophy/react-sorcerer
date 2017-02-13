@@ -2,6 +2,7 @@
 
 **NEW IN VERSION 2.x.x**
 Sorcerer now includes an imageProcessor! Details documented below.
+There are some breaking changes from version 1, noted in parenthesis in the props section below.
 
 Sorcerer is a react component that builds a srcset for your img tags.
 
@@ -77,10 +78,7 @@ You need need to pass both of these dependancies into the image processor.
 **inputPath (required)**
 This is the path to the group of image files for a certain screen percentage. In the example below, there are two configs. One is pointing to the images that are have 100% screen width, and the other is pointing to the images that have 30% screen width.
 
-**outputPath (optional)**
-This is the outputPath for the optimized images. It needs to be somewhere other than the inputPath to prevent the processor from reprocessing images in the future.
-
-Defaults to `inputPath + '/optimized'`
+Note: The images will be output to `inputPath + '/optimized'`.
 
 **coverage (required)**
 An integer representation of the screen percentage for the image files.
@@ -112,7 +110,6 @@ var config100 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/100',
-	outputPath: 'src/images/100/optimized',
 	coverage: 100
 }
 
@@ -120,7 +117,6 @@ var config30 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/30',
-	outputPath: 'src/images/30/optimized',
 	coverage: 30
 }
 
@@ -149,9 +145,10 @@ import Sorcerer from 'react-sorcerer';
     alt="sorcerer"
     className="example-image"
     srcExt="jpg"
-    srcPath="/images/defaultImg"
-    minDevice="mobileSm"
-    maxDevice="desktopXl"
+    srcName="defaultImg"
+    srcPath="/images/100"
+    minSize="mobileSm"
+    maxSize="desktopXl"
 />
 ```
 
@@ -169,7 +166,7 @@ The alt attribute for your img tag.
 
 A class for your image tag.
 
-**sizes**
+**sizes (Previously called: devices)**
 
 `React.PropTypes.object`
 
@@ -201,7 +198,7 @@ examples:
 
 `/images/errorImg.jpg || https://api.example.com/images/errorImg.jpg`
 
-**maxDevice**
+**maxSize**
 
 `React.PropTypes.string`
 
@@ -211,7 +208,7 @@ defaults to:
 
 `"desktopXl"`
 
-**minDevice**
+**minSize**
 
 `React.PropTypes.string`
 
@@ -231,11 +228,17 @@ examples:
 
 `jpg || jpeg || png || gif`
 
+**srcName (required)(New for v2, previously part of srcPath)**
+
+`React.PropTypes.string`
+
+The name of the image file. **DO NOT INCLUDE THE FILE EXTENSION HERE**
+
 **srcPath (required)**
 
 `React.PropTypes.string`
 
-The path to the default image file. **DO NOT INCLUDE THE FILE EXTENSION HERE**
+The path to the default image file.
 
 examples:
 
