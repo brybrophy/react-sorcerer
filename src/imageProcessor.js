@@ -1,14 +1,16 @@
 const mergeStream = require('merge-stream');
-const getDefaultSizes = require('./defaultSizes').getDefaultSizes;
+const getDefaultSizes = require('./defaultSizes');
 
-function imageProcessor(
-    gulp,
-    responsive,
-    inputPath,
-    outputPath,
-    coverage,
-    customSizes
-) {
+function imageProcessor(config) {
+    const {
+        gulp,
+        responsive,
+        inputPath,
+        outputPath,
+        coverage,
+        customSizes
+    } = config;
+    
     const sizes = customSizes ? customSizes : getDefaultSizes();
 
     gulp.task(coverage.toString(), function() {

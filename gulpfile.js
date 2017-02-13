@@ -1,10 +1,18 @@
 var gulp = require('gulp');
 var initGulpTasks = require('react-component-gulp-tasks');
 var responsive = require('gulp-responsive');
-var imageProcessor = require('./src/imageProcessor').imageProcessor;
+var imageProcessor = require('./src/imageProcessor');
 
-var oneHundred = imageProcessor(gulp, responsive, 'src/images/100', 'example/dist/images', 100);
-var thirty = imageProcessor(gulp, responsive, 'src/images/30', 'example/dist/images', 30);
+var config100 = {
+	gulp,
+	responsive,
+	inputPath: 'src/images/100',
+	outputPath: 'example/dist/images',
+	converage: 100
+}
+
+var oneHundred = imageProcessor(config100);
+// var thirty = imageProcessor(gulp, responsive, 'src/images/30', 'example/dist/images', 30);
 
 gulp.task('processImages', ['100', '30']);
 
