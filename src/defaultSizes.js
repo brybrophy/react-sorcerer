@@ -1,5 +1,5 @@
-function getDefaultDevices() {
-    const devices = {
+function getDefaultSizes() {
+    const sizes = {
         mobileSm: 320,
         mobileLg: 414,
         tabletSm: 768,
@@ -11,7 +11,7 @@ function getDefaultDevices() {
         desktopXl: 3840
     };
 
-    return devices;
+    return sizes;
 }
 
-module.exports = getDefaultDevices;
+module.exports = getDefaultSizes;

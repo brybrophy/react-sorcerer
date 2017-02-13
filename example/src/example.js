@@ -10,7 +10,7 @@ var App = React.createClass({
 					alt="sorcerer"
 					className="example-image"
 					srcExt="jpg"
-					srcPath="images/defaultImg"
+					srcPath="images/defaultImg100"
 					minDevice="mobileSm"
 					maxDevice="desktopXl"
 				/>

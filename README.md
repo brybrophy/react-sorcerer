@@ -33,9 +33,9 @@ npm install react-sorcerer --save
 
 ## Usage
 
-- Start by creating optimized versions of your images in different sizes.
+- Start by creating optimized versions of your images in different screen sizes.
 - There should be one default image. (example: `defaultImg.jpg`)
-- The optimized versions should be named according to the device they are optimzed for. (example: `defaultImg_mobileSm.jpg`, `defaultImg_tabletLg.jpg`)
+- The optimized versions should be named according to the size they are optimzed for. (example: `defaultImg_mobileSm.jpg`, `defaultImg_tabletLg.jpg`)
 - The images should all have the same extension type.
 - They can be saved locally, or hosted on a server as long as the image and extension are the last item in url. (example: `https://api.example.com/images/defaultImg.jpg`)
 
@@ -66,16 +66,16 @@ The alt attribute for your img tag.
 
 A class for your image tag.
 
-**devices**
+**sizes**
 
 `React.PropTypes.object`
 
-When creating the srcset, Sorcerer uses a default object with key value pairs of common devices and widths. You can replace the default devices with your own custom object.
+When creating the srcset, Sorcerer uses a default object with key value pairs of common sizes and widths. You can replace the default sizes with your own custom object.
 
 defaults to:
 
 ```
-const devices = {
+const sizes = {
     mobileSm: 320,
     mobileLg: 414,
     tabletSm: 768,
@@ -102,7 +102,7 @@ examples:
 
 `React.PropTypes.string`
 
-The maximum device in the srcSet range. Can be any key in the devices object.
+The maximum size in the srcSet range. Can be any key in the sizes object.
 
 defaults to:
 
@@ -112,7 +112,7 @@ defaults to:
 
 `React.PropTypes.string`
 
-The minimum device in the srcSet range. Can be any key in the devices object.
+The minimum size in the srcSet range. Can be any key in the sizes object.
 
 defaults to:
 

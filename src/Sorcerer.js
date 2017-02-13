@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import getDevices from './defaultDevices';
+import getSizes from './defaultSizes';
+import imageProcessor from './imageProcessor';
 
-export default class Sorcerer extends React.Component {
+class Sorcerer extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -14,17 +15,17 @@ export default class Sorcerer extends React.Component {
 
 	getSrcSet() {
 		const { srcExt, srcPath, maxDevice, minDevice } = this.props;
-		const devices = this.props.devices ? this.props.devices : getDevices();
-		const min = minDevice ? devices[minDevice] : 320;
-		const max = maxDevice ? devices[maxDevice] : 3840;
+		const sizes = this.props.sizes ? this.props.sizes : getSizes();
+		const min = minDevice ? sizes[minDevice] : 320;
+		const max = maxDevice ? sizes[maxDevice] : 3840;
 		let srcSetStr = '';
 
-		for (let device in devices) {
-			if (devices[device] >= min && devices[device] <= max) {
-				if (devices[device] === max) {
-					srcSetStr += `${srcPath}_${device}.${srcExt} ${devices[device]}w`;
+		for (let size in sizes) {
+			if (sizes[size] >= min && sizes[size] <= max) {
+				if (sizes[size] === max) {
+					srcSetStr += `${srcPath}_${size}.${srcExt} ${sizes[size]}w`;
 				} else {
-					srcSetStr += `${srcPath}_${device}.${srcExt} ${devices[device]}w, `;
+					srcSetStr += `${srcPath}_${size}.${srcExt} ${sizes[size]}w, `;
 				}
 			}
 		}
@@ -45,10 +46,12 @@ export default class Sorcerer extends React.Component {
 	}
 }
 
+export default Sorcerer;
+
 Sorcerer.propTypes = {
 	alt: React.PropTypes.string.isRequired,
 	className: React.PropTypes.string,
-	devices: React.PropTypes.object,
+	sizes: React.PropTypes.object,
 	errorSrc: React.PropTypes.string,
 	maxDevice: React.PropTypes.string,
 	minDevice: React.PropTypes.string,
