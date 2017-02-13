@@ -38,6 +38,7 @@
     "lint": "eslint ./; true",
     "publish:site": "NODE_ENV=production gulp publish:examples",
     "release": "NODE_ENV=production gulp release",
+    "release:beta": "NODE_ENV=production gulp build && npm publish --tag beta",
     "start": "gulp dev",
     "test": "echo \"no tests yet\" && exit 0",
     "watch": "gulp watch:lib",
