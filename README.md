@@ -40,9 +40,9 @@ Sorcerer includes an image processor to do the heavy lifting for you.
 
 ### Image File Structure
 
-To prepare your images for processing, you'll want to organize them in a certain way.
+To prepare your images for processing, you'll want to organize them in a certain way. Even if you choose to optimize your images by hand, using a tool like photoshop, you will want to organize your images in this way to use the Sorcerer component.
 
-- Create an `images` directory in your `src`.
+- Create an `images` directory somewhere in your project. `src` is usually a good place.
 - Inside of `images` sort your image files into sub directories based on the percentage of screen width they make up.
 
 For example, a full screen hero image would go in a subfolder `images/100`.
@@ -50,7 +50,7 @@ An image that takes up 30% of the screen width would go in `images/30`.
 
 This doesn't need to be exact. Just a rough estimate of percentage is fine.
 
-The images need to be large enough so that the image processor doesn't need to enlarge them. The default largest size that the image processor will put out is 3840px wide. So your images need to be at least that wide if you use the defaults. 
+The images need to be large enough so that the image processor doesn't need to enlarge them. The default largest size that the image processor will put out is 3840px wide. So your images need to be at least that wide if you use the defaults.
 
 ### Image Processor
 
