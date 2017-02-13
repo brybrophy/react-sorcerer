@@ -12,7 +12,6 @@ var config100 = {
 }
 
 var oneHundred = imageProcessor(config100);
-// var thirty = imageProcessor(gulp, responsive, 'src/images/30', 'example/dist/images', 30);
 
 gulp.task('processImages', ['100']);
 

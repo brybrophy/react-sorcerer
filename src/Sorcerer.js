@@ -13,18 +13,19 @@ class Sorcerer extends React.Component {
 	}
 
 	getSrcSet() {
-		const { srcExt, srcName, srcPath, maxDevice, minDevice } = this.props;
+		const { srcExt, srcName, srcPath, optimizedPath, maxSize, minSize } = this.props;
 		const sizes = this.props.sizes ? this.props.sizes : getDefaultSizes();
-		const min = minDevice ? sizes[minDevice] : 320;
-		const max = maxDevice ? sizes[maxDevice] : 3840;
+		const min = minSize ? sizes[minSize] : 320;
+		const max = maxSize ? sizes[maxSize] : 3840;
+		const path = optimizedPath ? optimizedPath : srcPath + '/optimized';
 		let srcSetStr = '';
 
 		for (let size in sizes) {
 			if (sizes[size] >= min && sizes[size] <= max) {
 				if (sizes[size] === max) {
-					srcSetStr += `${srcPath}/optimized/${srcName}_${size}.${srcExt} ${sizes[size]}w`;
+					srcSetStr += `${path}/${srcName}_${size}.${srcExt} ${sizes[size]}w`;
 				} else {
-					srcSetStr += `${srcPath}/optimized/${srcName}_${size}.${srcExt} ${sizes[size]}w, `;
+					srcSetStr += `${path}/${srcName}_${size}.${srcExt} ${sizes[size]}w, `;
 				}
 			}
 		}
@@ -56,8 +57,10 @@ Sorcerer.propTypes = {
 	className: React.PropTypes.string,
 	sizes: React.PropTypes.object,
 	errorSrc: React.PropTypes.string,
-	maxDevice: React.PropTypes.string,
-	minDevice: React.PropTypes.string,
+	maxSize: React.PropTypes.string,
+	minSize: React.PropTypes.string,
+	optimizedPath: React.PropTypes.string,
 	srcExt: React.PropTypes.string.isRequired,
+	srcName: React.PropTypes.string.isRequired,
 	srcPath: React.PropTypes.string.isRequired
 };

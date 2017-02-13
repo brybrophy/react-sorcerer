@@ -28,7 +28,7 @@ function imageProcessor(config) {
                     errorOnEnlargement: false
 
                 }))
-                .pipe(gulp.dest(inputPath + '/optimized'))
+                .pipe(gulp.dest(outputPath ? outputPath : inputPath + '/optimized'))
             );
         }
         return mergeStream(tasks);

@@ -78,7 +78,8 @@ You need need to pass both of these dependancies into the image processor.
 **inputPath (required)**
 This is the path to the group of image files for a certain screen percentage. In the example below, there are two configs. One is pointing to the images that are have 100% screen width, and the other is pointing to the images that have 30% screen width.
 
-Note: The images will be output to `inputPath + '/optimized'`.
+**outputPath (optional)**
+The path where the processed images will be saved. If no output path is supplied, the images will be output to `inputPath + '/optimized'`.
 
 **coverage (required)**
 An integer representation of the screen percentage for the image files.
@@ -110,6 +111,7 @@ var config100 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/100',
+    outputPath: 'src/images/100/optimized'
 	coverage: 100
 }
 
@@ -117,6 +119,7 @@ var config30 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/30',
+    outputPath: 'src/images/30/optimized'
 	coverage: 30
 }
 
@@ -217,6 +220,12 @@ The minimum size in the srcSet range. Can be any key in the sizes object.
 defaults to:
 
 `"mobileSm"`
+
+**optimizedPath**
+
+`React.PropTypes.string`
+
+The path to the group of optimized images. **Do not include file names**
 
 **srcExt (required)**
 
