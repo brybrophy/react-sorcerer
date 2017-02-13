@@ -8,7 +8,7 @@ var config100 = {
 	responsive,
 	inputPath: 'src/images/100',
 	outputPath: 'example/dist/images',
-	converage: 100
+	coverage: 100
 }
 
 var oneHundred = imageProcessor(config100);
