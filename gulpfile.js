@@ -1,14 +1,9 @@
 var gulp = require('gulp');
 var initGulpTasks = require('react-component-gulp-tasks');
+var responsive = require('gulp-responsive');
+var processImage = require('./src/imageProcesser').processImage;
 
-/**
- * Tasks are added by the react-component-gulp-tasks package
- *
- * See https://github.com/JedWatson/react-component-gulp-tasks
- * for documentation.
- *
- * You can also add your own additional gulp tasks if you like.
- */
+processImage(gulp, responsive, 'example/dist/images');
 
 var taskConfig = {
 

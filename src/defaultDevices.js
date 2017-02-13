@@ -1,4 +1,4 @@
-export function getDevices() {
+function getDefaultDevices() {
     const devices = {
         mobileSm: 320,
         mobileLg: 414,
@@ -13,3 +13,5 @@ export function getDevices() {
 
     return devices;
 }
+
+module.exports = getDefaultDevices;

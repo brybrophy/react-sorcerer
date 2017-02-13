@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { getDevices } from './defaultDevices';
+import getDevices from './defaultDevices';
 
 export default class Sorcerer extends React.Component {
 	constructor(props) {
