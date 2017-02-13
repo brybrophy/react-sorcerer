@@ -4790,7 +4790,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _defaultSizes = require('./defaultSizes');
 
-var _imageProcessor = require('./imageProcessor');
+var _defaultSizes2 = _interopRequireDefault(_defaultSizes);
+
+var _imageProcessor2 = require('./imageProcessor');
+
+var _imageProcessor3 = _interopRequireDefault(_imageProcessor2);
 
 var Sorcerer = (function (_React$Component) {
 	_inherits(Sorcerer, _React$Component);
@@ -4809,6 +4813,11 @@ var Sorcerer = (function (_React$Component) {
 			e.target.src = this.props.errorSrc;
 		}
 	}, {
+		key: 'getDefaultSizes',
+		value: function getDefaultSizes() {
+			return _defaultSizes2['default'];
+		}
+	}, {
 		key: 'getSrcSet',
 		value: function getSrcSet() {
 			var _props = this.props;
@@ -4817,7 +4826,7 @@ var Sorcerer = (function (_React$Component) {
 			var maxDevice = _props.maxDevice;
 			var minDevice = _props.minDevice;
 
-			var sizes = this.props.sizes ? this.props.sizes : (0, _defaultSizes.getDefaultSizes)();
+			var sizes = this.props.sizes ? this.props.sizes : (0, _defaultSizes2['default'])();
 			var min = minDevice ? sizes[minDevice] : 320;
 			var max = maxDevice ? sizes[maxDevice] : 3840;
 			var srcSetStr = '';
@@ -4835,6 +4844,11 @@ var Sorcerer = (function (_React$Component) {
 			return srcSetStr;
 		}
 	}, {
+		key: 'imageProcessor',
+		value: function imageProcessor() {
+			return _imageProcessor3['default'];
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2['default'].createElement('img', {
@@ -4850,7 +4864,7 @@ var Sorcerer = (function (_React$Component) {
 	return Sorcerer;
 })(_react2['default'].Component);
 
-exports['default'] = { Sorcerer: Sorcerer };
+exports['default'] = Sorcerer;
 
 Sorcerer.propTypes = {
 	alt: _react2['default'].PropTypes.string.isRequired,
@@ -4884,15 +4898,22 @@ function getDefaultSizes() {
     return sizes;
 }
 
-module.exports = { getDefaultSizes: getDefaultSizes };
+module.exports = getDefaultSizes;
 
 },{}],25:[function(require,module,exports){
 'use strict';
 
 var mergeStream = require('merge-stream');
-var getDefaultSizes = require('./defaultSizes').getDefaultSizes;
+var getDefaultSizes = require('./defaultSizes');
 
-function imageProcessor(gulp, responsive, inputPath, outputPath, coverage, customSizes) {
+function imageProcessor(config) {
+    var gulp = config.gulp;
+    var responsive = config.responsive;
+    var inputPath = config.inputPath;
+    var outputPath = config.outputPath;
+    var coverage = config.coverage;
+    var customSizes = config.customSizes;
+
     var sizes = customSizes ? customSizes : getDefaultSizes();
 
     gulp.task(coverage.toString(), function () {
@@ -4912,7 +4933,7 @@ function imageProcessor(gulp, responsive, inputPath, outputPath, coverage, custo
     });
 }
 
-module.exports = { imageProcessor: imageProcessor };
+module.exports = imageProcessor;
 
 },{"./defaultSizes":24,"merge-stream":11}]},{},[23])(23)
 });
