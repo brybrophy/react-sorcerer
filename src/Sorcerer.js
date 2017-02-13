@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import getSizes from './defaultSizes';
-import imageProcessor from './imageProcessor';
+import { getDefaultSizes } from './defaultSizes';
+import { imageProcessor } from './imageProcessor';
 
 class Sorcerer extends React.Component {
 	constructor(props) {
@@ -15,7 +15,7 @@ class Sorcerer extends React.Component {
 
 	getSrcSet() {
 		const { srcExt, srcPath, maxDevice, minDevice } = this.props;
-		const sizes = this.props.sizes ? this.props.sizes : getSizes();
+		const sizes = this.props.sizes ? this.props.sizes : getDefaultSizes();
 		const min = minDevice ? sizes[minDevice] : 320;
 		const max = maxDevice ? sizes[maxDevice] : 3840;
 		let srcSetStr = '';
@@ -46,7 +46,7 @@ class Sorcerer extends React.Component {
 	}
 }
 
-export default Sorcerer;
+export default { Sorcerer };
 
 Sorcerer.propTypes = {
 	alt: React.PropTypes.string.isRequired,

@@ -1,5 +1,5 @@
 const mergeStream = require('merge-stream');
-const getDefaultSizes = require('./defaultSizes');
+const getDefaultSizes = require('./defaultSizes').getDefaultSizes;
 
 function imageProcessor(
     gulp,
@@ -32,4 +32,4 @@ function imageProcessor(
     });
 }
 
-module.exports = imageProcessor;
+module.exports = { imageProcessor };

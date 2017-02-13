@@ -4790,11 +4790,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _defaultSizes = require('./defaultSizes');
 
-var _defaultSizes2 = _interopRequireDefault(_defaultSizes);
-
 var _imageProcessor = require('./imageProcessor');
-
-var _imageProcessor2 = _interopRequireDefault(_imageProcessor);
 
 var Sorcerer = (function (_React$Component) {
 	_inherits(Sorcerer, _React$Component);
@@ -4821,7 +4817,7 @@ var Sorcerer = (function (_React$Component) {
 			var maxDevice = _props.maxDevice;
 			var minDevice = _props.minDevice;
 
-			var sizes = this.props.sizes ? this.props.sizes : (0, _defaultSizes2['default'])();
+			var sizes = this.props.sizes ? this.props.sizes : (0, _defaultSizes.getDefaultSizes)();
 			var min = minDevice ? sizes[minDevice] : 320;
 			var max = maxDevice ? sizes[maxDevice] : 3840;
 			var srcSetStr = '';
@@ -4854,7 +4850,7 @@ var Sorcerer = (function (_React$Component) {
 	return Sorcerer;
 })(_react2['default'].Component);
 
-exports['default'] = Sorcerer;
+exports['default'] = { Sorcerer: Sorcerer };
 
 Sorcerer.propTypes = {
 	alt: _react2['default'].PropTypes.string.isRequired,
@@ -4888,13 +4884,13 @@ function getDefaultSizes() {
     return sizes;
 }
 
-module.exports = getDefaultSizes;
+module.exports = { getDefaultSizes: getDefaultSizes };
 
 },{}],25:[function(require,module,exports){
 'use strict';
 
 var mergeStream = require('merge-stream');
-var getDefaultSizes = require('./defaultSizes');
+var getDefaultSizes = require('./defaultSizes').getDefaultSizes;
 
 function imageProcessor(gulp, responsive, inputPath, outputPath, coverage, customSizes) {
     var sizes = customSizes ? customSizes : getDefaultSizes();
@@ -4916,7 +4912,7 @@ function imageProcessor(gulp, responsive, inputPath, outputPath, coverage, custo
     });
 }
 
-module.exports = imageProcessor;
+module.exports = { imageProcessor: imageProcessor };
 
 },{"./defaultSizes":24,"merge-stream":11}]},{},[23])(23)
 });

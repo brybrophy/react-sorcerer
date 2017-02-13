@@ -3,7 +3,7 @@ require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof requ
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Sorcerer = require('react-sorcerer');
+var Sorcerer = require('react-sorcerer').Sorcerer;
 
 var App = React.createClass({
 	displayName: 'App',
