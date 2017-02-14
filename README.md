@@ -152,6 +152,7 @@ import Sorcerer from 'react-sorcerer';
     srcPath="/images/100"
     minSize="mobileSm"
     maxSize="desktopXl"
+    optimizedPath: 'images/100/optimized'
 />
 ```
 
