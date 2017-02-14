@@ -1,13 +1,8 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.getDevices = getDevices;
-
-function getDevices() {
-    var devices = {
+function getDefaultSizes() {
+    var sizes = {
         mobileSm: 320,
         mobileLg: 414,
         tabletSm: 768,
@@ -19,8 +14,10 @@ function getDevices() {
         desktopXl: 3840
     };
 
-    return devices;
+    return sizes;
 }
+
+module.exports = getDefaultSizes;
 
 },{}],"react-sorcerer":[function(require,module,exports){
 'use strict';
@@ -43,7 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _defaultDevices = require('./defaultDevices');
+var _defaultSizes = require('./defaultSizes');
+
+var _defaultSizes2 = _interopRequireDefault(_defaultSizes);
 
 var Sorcerer = (function (_React$Component) {
 	_inherits(Sorcerer, _React$Component);
@@ -66,21 +65,24 @@ var Sorcerer = (function (_React$Component) {
 		value: function getSrcSet() {
 			var _props = this.props;
 			var srcExt = _props.srcExt;
+			var srcName = _props.srcName;
 			var srcPath = _props.srcPath;
-			var maxDevice = _props.maxDevice;
-			var minDevice = _props.minDevice;
+			var optimizedPath = _props.optimizedPath;
+			var maxSize = _props.maxSize;
+			var minSize = _props.minSize;
 
-			var devices = this.props.devices ? this.props.devices : (0, _defaultDevices.getDevices)();
-			var min = minDevice ? devices[minDevice] : 320;
-			var max = maxDevice ? devices[maxDevice] : 3840;
+			var sizes = this.props.sizes ? this.props.sizes : (0, _defaultSizes2['default'])();
+			var min = minSize ? sizes[minSize] : 320;
+			var max = maxSize ? sizes[maxSize] : 3840;
+			var path = optimizedPath ? optimizedPath : srcPath + '/optimized';
 			var srcSetStr = '';
 
-			for (var device in devices) {
-				if (devices[device] >= min && devices[device] <= max) {
-					if (devices[device] === max) {
-						srcSetStr += srcPath + '_' + device + '.' + srcExt + ' ' + devices[device] + 'w';
+			for (var size in sizes) {
+				if (sizes[size] >= min && sizes[size] <= max) {
+					if (sizes[size] === max) {
+						srcSetStr += path + '/' + srcName + '_' + size + '.' + srcExt + ' ' + sizes[size] + 'w';
 					} else {
-						srcSetStr += srcPath + '_' + device + '.' + srcExt + ' ' + devices[device] + 'w, ';
+						srcSetStr += path + '/' + srcName + '_' + size + '.' + srcExt + ' ' + sizes[size] + 'w, ';
 					}
 				}
 			}
@@ -88,12 +90,27 @@ var Sorcerer = (function (_React$Component) {
 			return srcSetStr;
 		}
 	}, {
+		key: 'imageProcessor',
+		value: (function (_imageProcessor) {
+			function imageProcessor() {
+				return _imageProcessor.apply(this, arguments);
+			}
+
+			imageProcessor.toString = function () {
+				return _imageProcessor.toString();
+			};
+
+			return imageProcessor;
+		})(function () {
+			return imageProcessor;
+		})
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2['default'].createElement('img', {
 				alt: this.props.alt,
 				className: this.props.className ? this.props.className : '',
-				src: this.props.srcPath + '.' + this.props.srcExt,
+				src: this.props.srcPath + '/' + this.props.srcName + '.' + this.props.srcExt,
 				srcSet: this.getSrcSet(),
 				onError: this.props.errorSrc ? this.addErrorSrc : null
 			});
@@ -108,13 +125,15 @@ exports['default'] = Sorcerer;
 Sorcerer.propTypes = {
 	alt: _react2['default'].PropTypes.string.isRequired,
 	className: _react2['default'].PropTypes.string,
-	devices: _react2['default'].PropTypes.object,
+	sizes: _react2['default'].PropTypes.object,
 	errorSrc: _react2['default'].PropTypes.string,
-	maxDevice: _react2['default'].PropTypes.string,
-	minDevice: _react2['default'].PropTypes.string,
+	maxSize: _react2['default'].PropTypes.string,
+	minSize: _react2['default'].PropTypes.string,
+	optimizedPath: _react2['default'].PropTypes.string,
 	srcExt: _react2['default'].PropTypes.string.isRequired,
+	srcName: _react2['default'].PropTypes.string.isRequired,
 	srcPath: _react2['default'].PropTypes.string.isRequired
 };
 module.exports = exports['default'];
 
-},{"./defaultDevices":1,"react":undefined}]},{},[]);
+},{"./defaultSizes":1,"react":undefined}]},{},[]);
