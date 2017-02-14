@@ -16,9 +16,11 @@ var App = React.createClass({
 				alt: 'sorcerer',
 				className: 'example-image',
 				srcExt: 'jpg',
-				srcPath: 'images/defaultImg',
+				srcName: 'defaultImg',
+				srcPath: 'images/100',
 				minDevice: 'mobileSm',
-				maxDevice: 'desktopXl'
+				maxDevice: 'desktopXl',
+				optimizedPath: 'images/100/optimized'
 			})
 		);
 	}
