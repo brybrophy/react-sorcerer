@@ -14,7 +14,7 @@ var App = React.createClass({
 					srcPath="images/100"
 					minDevice="mobileSm"
 					maxDevice="desktopXl"
-					optimizedPath="images/100/optimized"/
+					optimizedPath="images/100/optimized"
 				/>
 			</div>
 		);
