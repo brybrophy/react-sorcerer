@@ -55,7 +55,9 @@ The images need to be large enough so that the image processor doesn't need to e
 
 ### Image Processor
 
-The imageProcessor uses [gulp](http://gulpjs.com/) and [sharp](http://sharp.dimens.io/en/stable/install/) to optimize your images. Sharp is the fastest image processing tool that exists. That speed comes with a set of prerequisites that can be viewed [here](http://sharp.dimens.io/en/stable/install/#prerequisites) and [here](https://github.com/nodejs/node-gyp#installation). Most developers will already have these prerequisites set up in their development environment.
+Using the imageProcessor is optional. If you prefer, you can use another optimization tool and save your image files to directories by hand.
+
+The imageProcessor is a configurable build tool that allows you to optimize all of your images and save them to the proper directories with one command. It takes some initial work to setup, but makes optimizing your images easy in the long run. It uses [gulp](http://gulpjs.com/) and [sharp](http://sharp.dimens.io/en/stable/install/) to optimize your images. Sharp is the fastest image processing tool that exists. That speed comes with a set of prerequisites that can be viewed [here](http://sharp.dimens.io/en/stable/install/#prerequisites) and [here](https://github.com/nodejs/node-gyp#installation). Most developers will already have these prerequisites set up in their development environment.
 
 Once you have made sure that you have all the prerequisites met, download react-responsive as a dev dependency:
 
