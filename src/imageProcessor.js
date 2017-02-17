@@ -8,12 +8,14 @@ function imageProcessor(config) {
         inputPath,
         outputPath,
         coverage,
+        taskName,
         customSizes
     } = config;
 
     const sizes = customSizes ? customSizes : getDefaultSizes();
+    const name = taskName ? taskName : coverage.toString();
 
-    gulp.task(coverage.toString(), function() {
+    gulp.task(name, function() {
         const tasks = [];
 
         for (let size in sizes) {

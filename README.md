@@ -102,6 +102,9 @@ const sizes = {
 };
 ```
 
+**taskName (optional)**
+A name that is returned for each task from the image processor. This name will be used when you process your images with gulp. Defaults to the value in coverage.
+
 Once you have created a config, pass it into the image processor.
 
 ```
@@ -111,7 +114,8 @@ var config100 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/100',
-    outputPath: 'src/images/100/optimized'
+    outputPath: 'src/images/100/optimized',
+    taskName: '100Percenters',
 	coverage: 100
 }
 
@@ -119,7 +123,8 @@ var config30 = {
 	gulp,
 	responsive,
 	inputPath: 'src/images/30',
-    outputPath: 'src/images/30/optimized'
+    outputPath: 'src/images/30/optimized',
+    taskName: '30Percenters',
 	coverage: 30
 }
 
@@ -129,10 +134,10 @@ imageProcessor(config30);
 
 When you pass a config into the image processor, it returns a gulp task that you can run to create optimized versions of your images. The last step is to include those tasks in either the default gulp task, or a named gulp task that will run all of the tasks returned by the image processor.
 
-The first argument to the task will be the task name. I suggest using something like `processImages`. The second argument is an array with the tasks returned by the imageProcessor. The tasks are named according to the number passed into coverage in the config.
+The first argument to the task will be the task name. I suggest using something like `processImages`. The second argument is an array with the tasks returned by the imageProcessor. If you used a taskName in your config, use that in the array, otherwise use the value you passed into coverage, as a string.
 
 ```
-gulp.task('processImages', ['100', '30']);
+gulp.task('processImages', ['100Percenters', '30Percenters']);
 ```
 
 Now, in the terminal, run `gulp processImages`. You can also add this command to the build script in your package.json.

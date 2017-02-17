@@ -8,12 +8,13 @@ var config100 = {
 	responsive,
 	inputPath: 'src/images/100',
 	outputPath: 'example/dist/images/100/optimized',
+	taskName: 'config100',
 	coverage: 100
 }
 
-var oneHundred = imageProcessor(config100);
+imageProcessor(config100);
 
-gulp.task('processImages', ['100']);
+gulp.task('processImages', ['config100']);
 
 var taskConfig = {
 	component: {
