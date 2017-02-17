@@ -57,7 +57,11 @@ The images need to be large enough so that the image processor doesn't need to e
 
 The imageProcessor uses [gulp](http://gulpjs.com/) and [sharp](http://sharp.dimens.io/en/stable/install/) to optimize your images. Sharp is the fastest image processing tool that exists. That speed comes with a set of prerequisites that can be viewed [here](http://sharp.dimens.io/en/stable/install/#prerequisites) and [here](https://github.com/nodejs/node-gyp#installation). Most developers will already have these prerequisites set up in their development environment.
 
-Once you have made sure that you have all the prerequisites met, create a `gulpfile.js` file in your project root.
+Once you have made sure that you have all the prerequisites met, download react-responsive as a dev dependency:
+
+`npm install -D react-responsive`
+
+Then create a `gulpfile.js` file in your project root.
 
 In your gulpfile, requrie gulp, gulp-responsive, and the image processor from react-sorcerer.
 
