@@ -1,6 +1,6 @@
 {
   "name": "react-sorcerer",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "react-sorcerer",
   "main": "lib/Sorcerer.js",
   "author": "Bryan Brophy",
@@ -33,7 +33,7 @@
     "react": "global:React"
   },
   "scripts": {
-    "build": "gulp clean && NODE_ENV=production gulp build && gulp processImages",
+    "build": "gulp clean && NODE_ENV=production gulp build",
     "examples": "gulp dev:server",
     "lint": "eslint ./; true",
     "publish:site": "NODE_ENV=production gulp publish:examples",
