@@ -1,20 +1,5 @@
 var gulp = require('gulp');
 var initGulpTasks = require('react-component-gulp-tasks');
-var responsive = require('gulp-responsive');
-var imageProcessor = require('./src/imageProcessor');
-
-var config100 = {
-	gulp,
-	responsive,
-	inputPath: 'src/images/100',
-	outputPath: 'src/images/100/optimized',
-	taksName: 'config100',
-	coverage: 100
-}
-
-imageProcessor(config100);
-
-gulp.task('processImages', ['100']);
 
 var taskConfig = {
 	component: {
