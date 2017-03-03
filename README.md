@@ -1,12 +1,12 @@
 # react-sorcerer
 
-**NEW IN VERSION 2.x.x**
-Sorcerer now includes an imageProcessor! Details documented below.
-There are some breaking changes from version 1, noted in parenthesis in the props section below.
+[![npm version](https://badge.fury.io/js/react-sorcerer.svg)](https://badge.fury.io/js/react-sorcerer)
 
 Sorcerer is a react component that builds a srcset for your img tags.
 
 Source sets make sure that the browser never downloads an image that is too small or too large. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
+
+Sorcerer also includes an optional image processor, documented below. If you are not using a dynamic image processor like [cloudinary]('http://cloudinary.com/'), you can use the built in image processor to create different sizes of your image and store them in your project directories.
 
 ## Demo & Examples
 
@@ -41,114 +41,17 @@ Sorcerer includes an image processor to do the heavy lifting for you.
 
 ### Image File Structure
 
-To prepare your images for processing, you'll want to organize them in a certain way. Even if you choose to optimize your images by hand, using a tool like photoshop, you will want to organize your images in this way to use the Sorcerer component.
+Whether you are hosting your images in the cloud, or storing them in your project, this file structure will make setting up your Sorcerer components easy.
 
-- Create an `images` directory somewhere in your project. `src` is usually a good place.
+- Create an `images` directory.
 - Inside of `images` sort your image files into sub directories based on the percentage of screen width they make up.
 
 For example, a full screen hero image would go in a subfolder `images/100`.
 An image that takes up 30% of the screen width would go in `images/30`.
 
+If you have a lot of different "pages" in your app, you can further separate your images by page. Example: `images/home/100`, `images/about/100`...
+
 This doesn't need to be exact. Just a rough estimate of percentage is fine.
-
-The images need to be large enough so that the image processor doesn't need to enlarge them. The default largest size that the image processor will put out is 3840px wide. So your images need to be at least that wide if you use the defaults.
-
-### Image Processor
-
-Using the imageProcessor is optional. If you prefer, you can use another optimization tool and save your image files to directories by hand.
-
-The imageProcessor is a configurable build tool that allows you to optimize all of your images and save them to the proper directories with one command. It takes some initial work to setup, but makes optimizing your images easy in the long run. It uses [gulp](http://gulpjs.com/) and [sharp](http://sharp.dimens.io/en/stable/install/) to optimize your images. Sharp is the fastest image processing tool that exists. That speed comes with a set of prerequisites that can be viewed [here](http://sharp.dimens.io/en/stable/install/#prerequisites) and [here](https://github.com/nodejs/node-gyp#installation). Most developers will already have these prerequisites set up in their development environment.
-
-Once you have made sure that you have all the prerequisites met, download react-responsive as a dev dependency:
-
-`npm install -D react-responsive`
-
-Then create a `gulpfile.js` file in your project root.
-
-In your gulpfile, requrie gulp, gulp-responsive, and the image processor from react-sorcerer.
-
-```
-const gulp = require('gulp');
-const responsive = require('gulp-responsive');
-const imageProcessor = require('react-sorcerer/lib/imageProcessor');
-
-```
-
-Next, you will create a config object for the image processor. You will make a separate config for groups of images based on the percentage of screen width the need to cover.
-
-Here is a breakdown of the config:
-
-**gulp (required)** and **responsive (required)**
-You need need to pass both of these dependancies into the image processor.
-
-**inputPath (required)**
-This is the path to the group of image files for a certain screen percentage. In the example below, there are two configs. One is pointing to the images that are have 100% screen width, and the other is pointing to the images that have 30% screen width.
-
-**outputPath (optional)**
-The path where the processed images will be saved. If no output path is supplied, the images will be output to `inputPath + '/optimized'`.
-
-**coverage (required)**
-An integer representation of the screen percentage for the image files.
-
-**Sizes (optional)**
-An object with all of the screen sizes you want to optimize for.
-
-Defaults to
-```
-const sizes = {
-    mobileSm: 320,
-    mobileLg: 414,
-    tabletSm: 768,
-    tabletLg: 1024,
-    desktopXs: 1440,
-    desktopSm: 1680,
-    desktopMd: 1920,
-    desktopLg: 2560,
-    desktopXl: 3840
-};
-```
-
-**taskName (optional)**
-A name that is returned for each task from the image processor. This name will be used when you process your images with gulp. Defaults to the value in coverage.
-
-Once you have created a config, pass it into the image processor.
-
-```
-...
-
-var config100 = {
-	gulp,
-	responsive,
-	inputPath: 'src/images/100',
-    outputPath: 'src/images/100/optimized',
-    taskName: '100Percenters',
-	coverage: 100
-}
-
-var config30 = {
-	gulp,
-	responsive,
-	inputPath: 'src/images/30',
-    outputPath: 'src/images/30/optimized',
-    taskName: '30Percenters',
-	coverage: 30
-}
-
-imageProcessor(config100);
-imageProcessor(config30);
-```
-
-When you pass a config into the image processor, it returns a gulp task that you can run to create optimized versions of your images. The last step is to include those tasks in either the default gulp task, or a named gulp task that will run all of the tasks returned by the image processor.
-
-The first argument to the task will be the task name. I suggest using something like `processImages`. The second argument is an array with the tasks returned by the imageProcessor. If you used a taskName in your config, use that in the array, otherwise use the value you passed into coverage, as a string.
-
-```
-gulp.task('processImages', ['100Percenters', '30Percenters']);
-```
-
-Now, in the terminal, run `gulp processImages`. You can also add this command to the build script in your package.json.
-
-When the process is done, you will have optimized versions of your images for the Sorcerer component to use.
 
 ### Sorcerer Component
 
@@ -181,7 +84,7 @@ The alt attribute for your img tag.
 
 A class for your image tag.
 
-**sizes (Previously called: devices)**
+**sizes**
 
 `React.PropTypes.object`
 
@@ -249,7 +152,7 @@ examples:
 
 `jpg || jpeg || png || gif`
 
-**srcName (required)(New for v2, previously part of srcPath)**
+**srcName (required)**
 
 `React.PropTypes.string`
 
@@ -264,6 +167,105 @@ The path to the default image file.
 examples:
 
 `/images/defaultImg || https://api.example.com/images/defaultImg`
+
+### Image Processor
+
+Using the imageProcessor is optional. If you prefer, you can use another optimization tool and save your image files to directories by hand.
+
+The imageProcessor is a configurable build tool that allows you to optimize all of your images and save them to the proper directories with one command. It takes some initial work to setup, but makes optimizing your images easy in the long run. It uses [gulp](http://gulpjs.com/) and [sharp](http://sharp.dimens.io/en/stable/install/) to optimize your images. Sharp is the fastest image processing tool that exists. That speed comes with a set of prerequisites that can be viewed [here](http://sharp.dimens.io/en/stable/install/#prerequisites) and [here](https://github.com/nodejs/node-gyp#installation). Most developers will already have these prerequisites set up in their development environment.
+
+Once you have made sure that you have all the prerequisites met, download react-responsive as a dev dependency:
+
+`npm install -D react-responsive`
+
+Then create a `gulpfile.js` file in your project root.
+
+In your gulpfile, requrie gulp, gulp-responsive, and the image processor from react-sorcerer.
+
+```
+const gulp = require('gulp');
+const responsive = require('gulp-responsive');
+const imageProcessor = require('react-sorcerer/lib/imageProcessor');
+
+```
+
+Next, you will create a config object for the image processor. You will make a separate config for groups of images based on the percentage of screen width the need to cover.
+
+Here is a breakdown of the config:
+
+**gulp (required)** and **responsive (required)**
+You need need to pass both of these dependancies into the image processor.
+
+**inputPath (required)**
+This is the path to the group of image files for a certain screen percentage. In the example below, there are two configs. One is pointing to the images that are have 100% screen width, and the other is pointing to the images that have 30% screen width.
+
+**outputPath (optional)**
+The path where the processed images will be saved. If no output path is supplied, the images will be output to `inputPath + '/optimized'`.
+
+**coverage (required)**
+An integer representation of the screen percentage for the image files.
+
+**Sizes (optional)**
+An object with all of the screen sizes you want to optimize for.
+
+Defaults to
+```
+const sizes = {
+    mobileSm: 320,
+    mobileLg: 414,
+    tabletSm: 768,
+    tabletLg: 1024,
+    desktopXs: 1440,
+    desktopSm: 1680,
+    desktopMd: 1920,
+    desktopLg: 2560,
+    desktopXl: 3840
+};
+```
+
+__NOTE: The default images need to be large enough so that the image processor doesn't need to enlarge them. The default largest size that the image processor will put out is 3840px wide. So your images need to be at least that wide if you use the defaults.__
+
+**taskName (optional)**
+A name that is returned for each task from the image processor. This name will be used when you process your images with gulp. Defaults to the value in coverage.
+
+Once you have created a config, pass it into the image processor.
+
+```
+...
+
+var config100 = {
+	gulp,
+	responsive,
+	inputPath: 'src/images/100',
+    outputPath: 'src/images/100/optimized',
+    taskName: '100Percenters',
+	coverage: 100
+}
+
+var config30 = {
+	gulp,
+	responsive,
+	inputPath: 'src/images/30',
+    outputPath: 'src/images/30/optimized',
+    taskName: '30Percenters',
+	coverage: 30
+}
+
+imageProcessor(config100);
+imageProcessor(config30);
+```
+
+When you pass a config into the image processor, it returns a gulp task that you can run to create optimized versions of your images. The last step is to include those tasks in either the default gulp task, or a named gulp task that will run all of the tasks returned by the image processor.
+
+The first argument to the task will be the task name. I suggest using something like `processImages`. The second argument is an array with the tasks returned by the imageProcessor. If you used a taskName in your config, use that in the array, otherwise use the value you passed into coverage, as a string.
+
+```
+gulp.task('processImages', ['100Percenters', '30Percenters']);
+```
+
+Now, in the terminal, run `gulp processImages`. You can also add this command to the build script in your package.json.
+
+When the process is done, you will have optimized versions of your images for the Sorcerer component to use.
 
 ### Notes
 
