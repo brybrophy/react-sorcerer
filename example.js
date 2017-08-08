@@ -6,24 +6,24 @@ var ReactDOM = require('react-dom');
 var Sorcerer = require('react-sorcerer');
 
 var App = React.createClass({
-	displayName: 'App',
+  displayName: 'App',
 
-	render: function render() {
-		return React.createElement(
-			'div',
-			{ className: 'image-container' },
-			React.createElement(Sorcerer, {
-				alt: 'sorcerer',
-				className: 'example-image',
-				srcExt: 'jpg',
-				srcName: 'defaultImg',
-				srcPath: 'images/100',
-				minDevice: 'mobileSm',
-				maxDevice: 'desktopXl',
-				optimizedPath: 'images/100/optimized'
-			})
-		);
-	}
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'image-container' },
+      React.createElement(Sorcerer, {
+        alt: 'sorcerer',
+        className: 'example-image',
+        srcExt: 'jpg',
+        srcName: 'defaultImg',
+        srcPath: './images/100',
+        minDevice: 'mobileSm',
+        maxDevice: 'desktopXl',
+        optimizedPath: './images/100/optimized'
+      })
+    );
+  }
 });
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
