@@ -1143,16 +1143,16 @@ var Sorcerer = (function (_Component) {
 exports['default'] = Sorcerer;
 
 Sorcerer.propTypes = {
-  alt: _react2['default'].PropTypes.string.isRequired,
-  className: _react2['default'].PropTypes.string,
-  sizes: _react2['default'].PropTypes.object,
-  errorSrc: _react2['default'].PropTypes.string,
-  maxSize: _react2['default'].PropTypes.string,
-  minSize: _react2['default'].PropTypes.string,
-  optimizedPath: _react2['default'].PropTypes.string,
-  srcExt: _react2['default'].PropTypes.string.isRequired,
-  srcName: _react2['default'].PropTypes.string.isRequired,
-  srcPath: _react2['default'].PropTypes.string.isRequired
+  alt: _propTypes2['default'].string.isRequired,
+  className: _propTypes2['default'].string,
+  sizes: _propTypes2['default'].object,
+  errorSrc: _propTypes2['default'].string,
+  maxSize: _propTypes2['default'].string,
+  minSize: _propTypes2['default'].string,
+  optimizedPath: _propTypes2['default'].string,
+  srcExt: _propTypes2['default'].string.isRequired,
+  srcName: _propTypes2['default'].string.isRequired,
+  srcPath: _propTypes2['default'].string.isRequired
 };
 module.exports = exports['default'];
 

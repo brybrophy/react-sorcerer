@@ -1,6 +1,6 @@
 {
   "name": "react-sorcerer",
-  "version": "2.0.14",
+  "version": "2.1.0",
   "description": "react-sorcerer",
   "main": "lib/Sorcerer.js",
   "author": "Bryan Brophy",
