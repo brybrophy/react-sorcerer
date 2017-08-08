@@ -15,7 +15,8 @@
   "dependencies": {
     "classnames": "^2.1.2",
     "gulp": "^3.9.0",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
