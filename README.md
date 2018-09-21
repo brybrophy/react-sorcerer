@@ -7,7 +7,7 @@
 
 Sorcerer is a react component that builds a srcset for your img tags.
 
-Sorcerer works by using a set of image sources to allow the browser to make a calculated decision and display to most optimal image for the current screen size. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
+Source sets work by using a set of image sources to allow the browser to make a calculated decision and display to most optimal image for the current screen size. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
 
 ### Demo
 
@@ -50,7 +50,7 @@ import Sorcerer from 'react-sorcerer';
 />
 ```
 
-Note: the keys used in the `srcSetData` (ie: xs, sm, md, lg) are only for the example. I you can name them what ever you want, and you can have as many as you want. Just think of them as breakpoints for all the different image sizes you have.
+Note: the keys used in the `srcSetData` (ie: xs, sm, md, lg) are only for the example. You can name them what ever you want, and you can have as many as you want. Just think of them as breakpoints for all the different image sizes you have.
 The `coverage` props is used to help the browser determine which image to use at each screen size based on the image's width. A full width image would have a `coverage` of 100. An image in a 4 column grid might have a `coverage` of 25.
 
 ### Props
