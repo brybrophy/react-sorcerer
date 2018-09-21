@@ -22,32 +22,32 @@ yarn add react-sorcerer
 
 ## Usage
 
-```
+```jsx
 import Sorcerer from 'react-sorcerer';
 
 <Sorcerer
-        alt="an image"
-        coverage={100}
-        src="https://dummyimage.com/1024x800/f00/fff"
-        srcSetData={{
-          xs: {
-            src: 'https://dummyimage.com/300x200/f00/fff',
-            width: 300
-          },
-          sm: {
-            src: 'https://dummyimage.com/400x300/f00/fff',
-            width: 400
-          },
-          md: {
-            src: 'https://dummyimage.com/800x600/f00/fff',
-            width: 800
-          },
-          lg: {
-            src: 'https://dummyimage.com/1100x800/f00/fff',
-            width: 1100
-          }
-        }}
-      />
+  alt="an image"
+  coverage={100}
+  src="https://dummyimage.com/1024x800/f00/fff"
+  srcSetData={{
+    xs: {
+      src: 'https://dummyimage.com/300x200/f00/fff',
+      width: 300
+    },
+    sm: {
+      src: 'https://dummyimage.com/400x300/f00/fff',
+      width: 400
+    },
+    md: {
+      src: 'https://dummyimage.com/800x600/f00/fff',
+      width: 800
+    },
+    lg: {
+      src: 'https://dummyimage.com/1100x800/f00/fff',
+      width: 1100
+    }
+  }}
+/>
 ```
 
 Note: the keys used in the `srcSetData` (ie: xs, sm, md, lg) are only for the example. I you can name them what ever you want, and you can have as many as you want. Just think of them as breakpoints for all the different image sizes you have.
