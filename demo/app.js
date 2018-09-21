@@ -12,23 +12,23 @@ class App extends React.Component {
       <Sorcerer
         alt="an image"
         coverage={100}
-        src="https://www.fillmurray.com/800/500"
+        src="https://dummyimage.com/1024x800/f00/fff"
         srcSetData={{
           xs: {
-            src: 'https://www.fillmurray.com/300/200',
-            size: 320
+            src: 'https://dummyimage.com/300x200/f00/fff',
+            width: 300
           },
           sm: {
-            src: 'https://www.fillmurray.com/500/300',
-            size: 414
+            src: 'https://dummyimage.com/400x300/f00/fff',
+            width: 400
           },
           md: {
-            src: 'https://www.fillmurray.com/600/400',
-            size: 768
+            src: 'https://dummyimage.com/800x600/f00/fff',
+            width: 800
           },
           lg: {
-            src: 'https://www.fillmurray.com/800/500',
-            size: 1024
+            src: 'https://dummyimage.com/1100x800/f00/fff',
+            width: 1100
           }
         }}
         style={imageStyles}

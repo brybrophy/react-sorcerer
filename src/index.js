@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import deepEqual from './deepEqual';
 
 export default class Sorcerer extends React.Component {
@@ -11,7 +12,7 @@ export default class Sorcerer extends React.Component {
     this.setSrcSetAndSizes();
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps) {
     const { coverage, srcSetData } = this.props;
     const coverageChanged = coverage !== prevProps.coverage;
     const srcSetChanged = !deepEqual(srcSetData, srcSetData);
@@ -26,21 +27,18 @@ export default class Sorcerer extends React.Component {
     let nextSrcSet = '';
 
     for (const key in srcSetData) {
-      const { size, src } = srcSetData[key];
-      nextSrcSet += `${src} ${size}w, `;
+      const { src, width } = srcSetData[key];
+      nextSrcSet += `${src} ${width}w, `;
     }
-
-    console.log(nextSrcSet);
 
     return nextSrcSet;
   };
 
   buildSizes = () => {
     const { coverage, srcSetData } = this.props;
-    const smallestSize = srcSetData[Object.keys(srcSetData)[0]].size;
-    const nextSizes = `(min-width: ${smallestSize}) ${smallestSize}, ${coverage}vw`;
-
-    console.log(nextSizes);
+    const smallestSize = srcSetData[Object.keys(srcSetData)[0]].width;
+    const viewWidth = coverage / 2;
+    const nextSizes = `(min-width: ${smallestSize}) ${smallestSize}, ${viewWidth}vw`;
 
     return nextSizes;
   };
@@ -65,3 +63,14 @@ export default class Sorcerer extends React.Component {
     );
   }
 }
+
+Sorcerer.propTypes = {
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  coverage: PropTypes.number.isRequired,
+  src: PropTypes.string.isRequired,
+  srcSetData: PropTypes.objectOf(
+    PropTypes.shape({ src: PropTypes.string, width: PropTypes.number })
+  ),
+  style: PropTypes.object
+};
