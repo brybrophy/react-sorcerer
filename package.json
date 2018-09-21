@@ -2,6 +2,15 @@
   "name": "react-sorcerer",
   "version": "3.0.0",
   "description": "react-sorcerer",
+  "author": "Bryan Brophy",
+  "homepage": "https://github.com/brybrophy/react-sorcerer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brybrophy/react-sorcerer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brybrophy/react-sorcerer/issues"
+  },
   "main": "index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
@@ -48,7 +57,8 @@
     "version": "npm run build",
     "start": "webpack-dev-server --mode development",
     "build-babel": "babel src",
-    "build-es": "builder run  --env \"{\\\"BABEL_ENV\\\":\\\"esm\\\"}\" build-babel -- -d es",
+    "build-es":
+      "builder run  --env \"{\\\"BABEL_ENV\\\":\\\"esm\\\"}\" build-babel -- -d es",
     "build-lib": "builder run build-babel -- -d lib",
     "build-dist": "webpack --config webpack.dist.config.js --mode production",
     "build": "builder concurrent --buffer build-lib build-es",
@@ -57,15 +67,7 @@
     "test": "jest test --config jest.unit.config.js",
     "check": "npm run lint && npm run test"
   },
-  "repository": "https://github.com/brybrophy/react-sorcerer.git",
-  "author": "Bryan Brophy <brybrophy@gmail.com>",
   "license": "MIT",
-  "keywords": [
-    "react",
-    "progressive",
-    "images",
-    "loading",
-    "srcset"
-  ],
+  "keywords": ["react", "progressive", "images", "loading", "srcset"],
   "sideEffects": false
 }
