@@ -14,6 +14,9 @@
   "main": "index.js",
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
+  "dependencies": {
+    "prop-types": "^15.6.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.1",
@@ -39,7 +42,6 @@
     "jest": "^23.6.0",
     "jest-enzyme": "^6.1.1",
     "prettier": "^1.14.2",
-    "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-test-renderer": "^16.5.1",

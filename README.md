@@ -1,13 +1,13 @@
 # react-sorcerer
 
 [![npm version](https://badge.fury.io/js/react-sorcerer.svg)](https://badge.fury.io/js/react-sorcerer)
-![https://img.shields.io/badge/dependencies-none-lightgrey.svg](https://img.shields.io/badge/dependencies-none-lightgrey.svg)
+![https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![https://img.shields.io/badge/dev-dependencies-up%20to%20date-brightgreen.svg](https://img.shields.io/badge/dev--dependencies-up%20to%20date-brightgreen.svg)
 ![https://img.shields.io/badge/build-passing-brightgreen.svg](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 Sorcerer is a react component that builds a srcset for your img tags.
 
-Source sets work by using a set of image sources to allow the browser to make a calculated decision and display to most optimal image for the current screen size. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
+Source sets work by using a set of image sources to allow the browser to make a calculated decision and display the most optimal image for the current screen size. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
 
 ### Demo
 
