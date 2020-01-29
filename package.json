@@ -1,6 +1,6 @@
 {
   "name": "react-sorcerer",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "react-sorcerer",
   "author": "Bryan Brophy",
   "homepage": "https://github.com/brybrophy/react-sorcerer",
@@ -67,6 +67,9 @@
     "images",
     "loading",
     "srcset"
+  ],
+  "files": [
+    "dist"
   ],
   "sideEffects": false
 }
