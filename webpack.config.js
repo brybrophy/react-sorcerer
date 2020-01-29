@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require ('path');
 
 module.exports = {
   output: {
@@ -7,26 +7,35 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/assets/'
   },
-
-  entry: ['./demo/app.js'],
-
+  entry: ['./demo/app.tsx'],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts'],
     modules: [path.join(__dirname, 'node_modules')]
   },
-
   devServer: {
     contentBase: './demo',
     historyApiFallback: true,
     hot: false
   },
-
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: [/node_modules/],
         use: 'babel-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true
+            }
+          },
+          'awesome-typescript-loader'
+        ]
       },
       {
         test: /\.css$/,
