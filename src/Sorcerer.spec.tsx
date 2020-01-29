@@ -11,18 +11,6 @@ import {
 } from '../testUtils/testData';
 
 describe('Sorcerer Component', () => {
-  it('matches snapshot', () => {
-    const wrapper = shallow(
-      <Sorcerer
-        alt="an image"
-        coverage={100}
-        fallbackSrc={expectedSrc}
-        srcSetData={srcSetData}
-      />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('assigns the correct props', () => {
     const wrapper = shallow(
       <Sorcerer
