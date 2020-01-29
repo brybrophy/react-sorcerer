@@ -1,27 +1,41 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'nuka-carousel.min.js',
-    library: 'Nuka',
+    filename: 'index.min.js',
+    library: 'Sorcerer',
     libraryTarget: 'umd',
     libraryExport: 'default'
   },
-
-  entry: path.join(__dirname, 'src/index.js'),
-
+  entry: path.join(__dirname, 'src/index.ts'),
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts'],
     modules: [path.join(__dirname, 'node_modules')]
   },
-
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: [/node_modules/],
-        use: 'babel-loader'
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true
+            }
+          },
+          'awesome-typescript-loader'
+        ]
       }
     ]
   },
