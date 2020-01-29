@@ -1,6 +1,6 @@
 {
   "name": "react-sorcerer",
-  "version": "3.0.4",
+  "version": "4.0.0",
   "description": "react-sorcerer",
   "author": "Bryan Brophy",
   "homepage": "https://github.com/brybrophy/react-sorcerer",
@@ -53,13 +53,12 @@
     "react-dom": "^16.8.0"
   },
   "scripts": {
-    "preversion": "yarn check",
+    "preversion": "yarn test && yarn lint",
     "version": "yarn build",
     "start": "webpack-dev-server --mode development",
     "build": "rimraf dist && webpack --config webpack.dist.config.js",
     "lint": "eslint .",
-    "test": "jest",
-    "check": "yarn lint && yarn test"
+    "test": "jest"
   },
   "license": "MIT",
   "keywords": [
