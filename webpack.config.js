@@ -7,7 +7,7 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/assets/'
   },
-  entry: ['./demo/app.tsx'],
+  entry: ['./demo/app.jsx'],
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
     modules: [path.join(__dirname, 'node_modules')]
