@@ -4,7 +4,7 @@ module.exports = {
   mode: 'production',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'index.min.js',
+    filename: 'index.js',
     library: 'Sorcerer',
     libraryTarget: 'umd',
     libraryExport: 'default'
