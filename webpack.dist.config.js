@@ -5,9 +5,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'Sorcerer',
-    libraryTarget: 'umd',
-    libraryExport: 'default'
+    libraryTarget: 'umd'
   },
   entry: path.join(__dirname, 'src/index.ts'),
   resolve: {
