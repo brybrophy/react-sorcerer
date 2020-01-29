@@ -12,8 +12,6 @@
     "url": "https://github.com/brybrophy/react-sorcerer/issues"
   },
   "main": "dist/index.js",
-  "module": "es/index.js",
-  "jsnext:main": "es/index.js",
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
@@ -31,7 +29,6 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
-    "builder": "^5.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
@@ -46,14 +43,13 @@
     "react-dom": "^16.12.0",
     "ts-jest": "^25.0.0",
     "typescript": "^3.7.5",
-    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "scripts": {
     "preversion": "npm run check",
