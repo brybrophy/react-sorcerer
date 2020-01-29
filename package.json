@@ -41,6 +41,7 @@
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "rimraf": "^3.0.1",
     "ts-jest": "^25.0.0",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
@@ -55,7 +56,7 @@
     "preversion": "npm run check",
     "version": "npm run build",
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --config webpack.dist.config.js",
+    "build": "rimraf dist && webpack --config webpack.dist.config.js",
     "lint": "eslint .",
     "test": "jest",
     "check": "npm run lint && npm run test"

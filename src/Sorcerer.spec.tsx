@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Sorcerer from '../src/index';
+import Sorcerer from './index';
 import {
   srcSetData,
   expectedAlt,
   expectedSizes,
   expectedSrc,
   expectedSrcSet
-} from '../testUtils/testData';
+} from './testUtils/testData';
 
 describe('Sorcerer Component', () => {
   it('assigns the correct props', () => {

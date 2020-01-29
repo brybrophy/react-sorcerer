@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist",
     "downlevelIteration": true,
     "esModuleInterop": true,
     "jsx": "react",
@@ -7,8 +9,10 @@
     "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
+    "rootDir": "src",
     "strict": true,
     "target": "es5"
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*"]
 }

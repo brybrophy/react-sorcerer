@@ -1,5 +1,5 @@
-import testHook from '../testUtils/testHook';
-import { useSorcerer } from '../src/index';
+import testHook from './testUtils/testHook';
+import { useSorcerer } from './index';
 import { UseSorcererResult } from './useSorcerer';
 import {
   srcSetData,
@@ -7,7 +7,7 @@ import {
   expectedSizes,
   expectedSrc,
   expectedSrcSet
-} from '../testUtils/testData';
+} from './testUtils/testData';
 
 describe('useSorcerer', () => {
   it('returns the expected result', () => {

@@ -1,10 +1,10 @@
-const path = require ('path');
+const path = require('path');
 
 module.exports = {
   mode: 'production',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'react-sorcerer.min.js',
+    filename: 'index.min.js',
     library: 'Sorcerer',
     libraryTarget: 'umd',
     libraryExport: 'default'
