@@ -1,4 +1,11 @@
 module.exports = {
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx'],
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
+  // testEnvironment: 'node',
+  transform: {
+    '\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest'
+  },
+  verbose: true
 };

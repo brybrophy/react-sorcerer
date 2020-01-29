@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
+    "@types/enzyme": "^3.10.4",
     "@types/jest": "^25.1.0",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
@@ -60,7 +61,7 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --config webpack.dist.config.js",
     "lint": "eslint .",
-    "test": "jest test --config jest.config.js",
+    "test": "jest test",
     "check": "npm run lint && npm run test"
   },
   "license": "MIT",
