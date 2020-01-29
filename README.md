@@ -90,14 +90,14 @@ Note: The `coverage` prop is used to help the browser determine which image to u
 
 ### Props
 
-| Name       | Type                                     | Required | Description                                                 |
-| ---------- | ---------------------------------------- | -------- | ----------------------------------------------------------- |
-| alt        | `string`                                 | `true`   | alt tag for the image                                       |
-| className  | `string`                                 | `false`  | className for the image                                     |
-| coverage   | `number`                                 | `true`   | an estimate of the display width of the image in percentage |
-| src        | `string`                                 | `true`   | the src of the main image                                   |
-| srcSetData | `{ sm: { src: string, width: number } }` | `true`   | a mapping of image sources and their width in pixels        |
-| style      | `object`                                 | `false`  | style object for the image                                  |
+| Name       | Type                               | Required | Description                                                 |
+| ---------- | ---------------------------------- | -------- | ----------------------------------------------------------- |
+| alt        | `string`                           | `true`   | alt tag for the image                                       |
+| className  | `string`                           | `false`  | className for the image                                     |
+| coverage   | `number`                           | `true`   | an estimate of the display width of the image in percentage |
+| src        | `string`                           | `true`   | the src of the main image                                   |
+| srcSetData | `{ src: string, width: number }[]` | `true`   | an array of image sources and their width in pixels         |
+| style      | `object`                           | `false`  | style object for the image                                  |
 
 ### License
 
