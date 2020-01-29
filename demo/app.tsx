@@ -10,7 +10,7 @@ const App = () => {
   const sorcererDemoProps = useSorcerer({
     alt: 'an image for the demo',
     coverage: 100,
-    fallbackSrc: 'https://dummyimage.com/1024x800/f00/fff',
+    src: 'https://dummyimage.com/1024x800/f00/fff',
     srcSetData: [
       {
         src: 'https://dummyimage.com/300x200/f00/fff',

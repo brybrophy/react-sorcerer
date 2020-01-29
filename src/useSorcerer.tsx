@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 export interface UseSorcererConfig {
   alt: string;
   coverage: number;
-  fallbackSrc: string;
+  src: string;
   srcSetData: SrcSetData[];
 }
 
@@ -46,7 +46,7 @@ export function useSorcerer(config: UseSorcererConfig): UseSorcererResult {
   return {
     alt: config.alt,
     sizes,
-    src: config.fallbackSrc,
+    src: config.src,
     srcSet
   };
 }

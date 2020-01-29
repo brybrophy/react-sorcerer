@@ -16,7 +16,7 @@ describe('Sorcerer Component', () => {
       <Sorcerer
         alt={expectedAlt}
         coverage={100}
-        fallbackSrc={expectedSrc}
+        src={expectedSrc}
         srcSetData={srcSetData}
       />
     );

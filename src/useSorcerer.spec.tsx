@@ -15,7 +15,7 @@ describe('useSorcerer', () => {
       useSorcerer({
         alt: expectedAlt,
         coverage: 100,
-        fallbackSrc: expectedSrc,
+        src: expectedSrc,
         srcSetData
       })
     );

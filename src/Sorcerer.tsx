@@ -11,7 +11,7 @@ const Sorcerer = (props: ReactSorcererProps) => {
   const sorcererImageProps = useSorcerer({
     alt: props.alt,
     coverage: props.coverage,
-    fallbackSrc: props.fallbackSrc,
+    src: props.src,
     srcSetData: props.srcSetData
   });
 
@@ -19,7 +19,7 @@ const Sorcerer = (props: ReactSorcererProps) => {
     <img
       {...sorcererImageProps}
       className={props.className}
-      src={props.fallbackSrc}
+      src={props.src}
       style={props.style}
     />
   );
