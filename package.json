@@ -68,5 +68,8 @@
     "loading",
     "srcset"
   ],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false
 }
