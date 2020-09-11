@@ -1,14 +1,8 @@
-# react-sorcerer
+# React Sorcerer
 
-[![npm version](https://badge.fury.io/js/react-sorcerer.svg)](https://badge.fury.io/js/react-sorcerer)
+![https://img.shields.io/github/license/brybrophy/react-sorcerer?color=blue](https://img.shields.io/github/license/brybrophy/react-sorcerer?color=blue) ![https://img.shields.io/npm/v/react-sorcerer](https://img.shields.io/npm/v/react-sorcerer) ![https://img.shields.io/bundlephobia/minzip/react-sorcerer](https://img.shields.io/bundlephobia/minzip/react-sorcerer) ![https://img.shields.io/librariesio/release/npm/react-sorcerer](https://img.shields.io/librariesio/release/npm/react-sorcerer)
 
-![https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
-
-![https://img.shields.io/badge/dev-dependencies-up%20to%20date-brightgreen.svg](https://img.shields.io/badge/dev--dependencies-up%20to%20date-brightgreen.svg)
-
-![https://img.shields.io/badge/build-passing-brightgreen.svg](https://img.shields.io/badge/build-passing-brightgreen.svg)
-
-ReactSorcerer is a react component and companion hook that helps you use source sets for your img tags.
+React Sorcerer is a react component and companion hook that helps you use source sets for your img tags.
 
 Source sets work by using a set of image sources to allow the browser to make a calculated decision and display the most optimal image for the current screen size. They increase site performance, and save your users bandwidth. They are like the Goldilocks of image optimization.
 
