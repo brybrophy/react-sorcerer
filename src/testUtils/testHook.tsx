@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-export default function testHook<T>(runHook: any): T {
+export default function testHook<T>(runHook: () => T): T {
   function HookWrapper() {
     const output = runHook();
 

@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 
 import { useSorcerer, UseSorcererConfig } from './useSorcerer';
 
@@ -7,7 +7,7 @@ export interface ReactSorcererProps extends UseSorcererConfig {
   style?: CSSProperties;
 }
 
-const Sorcerer = (props: ReactSorcererProps) => {
+const Sorcerer = (props: ReactSorcererProps): ReactElement => {
   const sorcererImageProps = useSorcerer({
     alt: props.alt,
     coverage: props.coverage,

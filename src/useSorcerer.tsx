@@ -35,7 +35,7 @@ export function useSorcerer(config: UseSorcererConfig): UseSorcererResult {
     const { srcSetData } = config;
     let nextSrcSet = '';
 
-    for (let item of srcSetData) {
+    for (const item of srcSetData) {
       const { src, width } = item;
       nextSrcSet += `${src} ${width}w, `;
     }
