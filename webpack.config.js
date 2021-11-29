@@ -34,7 +34,7 @@ module.exports = {
               cacheDirectory: true
             }
           },
-          'awesome-typescript-loader'
+          'ts-loader'
         ]
       },
       {
