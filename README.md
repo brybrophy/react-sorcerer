@@ -21,7 +21,7 @@ yarn add react-sorcerer
 ## Use as a Component
 
 ```jsx
-import Sorcerer from 'react-sorcerer';
+import { Sorcerer } from 'react-sorcerer';
 
 <Sorcerer
   alt="an image"
