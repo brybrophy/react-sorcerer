@@ -1,28 +1,31 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname, './dist'),
     sourceMapFilename: '[name].map',
     filename: 'main.js',
-    publicPath: '/assets/'
   },
+  devtool: false,
   entry: ['./demo/app.jsx'],
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
-    modules: [path.join(__dirname, 'node_modules')]
+    modules: [path.join(__dirname, 'node_modules')],
   },
   devServer: {
-    contentBase: './demo',
     historyApiFallback: true,
-    hot: false
+    hot: false,
+    compress: true,
+    port: 8080,
   },
+  plugins: [new HtmlWebpackPlugin({ template: './demo/index.html' })],
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: [/node_modules/],
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
         test: /\.tsx?$/,
@@ -31,20 +34,20 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              cacheDirectory: true
-            }
+              cacheDirectory: true,
+            },
           },
-          'ts-loader'
-        ]
+          'ts-loader',
+        ],
       },
       {
         test: /\.css$/,
-        use: 'style-loader!css-loader'
+        use: 'style-loader!css-loader',
       },
       {
         test: /\.(png|jpg)$/,
-        use: 'url-loader?limit=8192'
-      }
-    ]
-  }
+        use: 'url-loader?limit=8192',
+      },
+    ],
+  },
 };

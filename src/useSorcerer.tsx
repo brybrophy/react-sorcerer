@@ -47,6 +47,6 @@ export function useSorcerer(config: UseSorcererConfig): UseSorcererResult {
     alt: config.alt,
     sizes,
     src: config.src,
-    srcSet
+    srcSet,
   };
 }

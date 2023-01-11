@@ -1,5 +1,2 @@
-import Sorcerer from './Sorcerer';
-import { useSorcerer } from './useSorcerer';
-
-export { useSorcerer };
-export default Sorcerer;
+export { Sorcerer } from './Sorcerer';
+export { useSorcerer } from './useSorcerer';

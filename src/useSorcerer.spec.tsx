@@ -1,28 +1,27 @@
-import testHook from './testUtils/testHook';
-import { useSorcerer } from './index';
-import { UseSorcererResult } from './useSorcerer';
+import { renderHook } from '@testing-library/react';
+
+import { useSorcerer } from './useSorcerer';
 import {
   srcSetData,
   expectedAlt,
   expectedSizes,
   expectedSrc,
-  expectedSrcSet
+  expectedSrcSet,
 } from './testUtils/testData';
 
 describe('useSorcerer', () => {
   it('returns the expected result', () => {
-    const actual: UseSorcererResult = testHook(() =>
+    const { result } = renderHook(() =>
       useSorcerer({
         alt: expectedAlt,
         coverage: 100,
         src: expectedSrc,
-        srcSetData
-      })
+        srcSetData,
+      }),
     );
-
-    expect(actual.alt).toBe(expectedAlt);
-    expect(actual.sizes).toBe(expectedSizes);
-    expect(actual.src).toBe(expectedSrc);
-    expect(actual.srcSet).toBe(expectedSrcSet);
+    expect(result.current.alt).toBe(expectedAlt);
+    expect(result.current.sizes).toBe(expectedSizes);
+    expect(result.current.src).toBe(expectedSrc);
+    expect(result.current.srcSet).toBe(expectedSrcSet);
   });
 });

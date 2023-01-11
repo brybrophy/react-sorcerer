@@ -21,7 +21,7 @@ yarn add react-sorcerer
 ## Use as a Component
 
 ```jsx
-import Sorcerer from 'react-sorcerer';
+import { Sorcerer } from 'react-sorcerer';
 
 <Sorcerer
   alt="an image"
@@ -30,20 +30,20 @@ import Sorcerer from 'react-sorcerer';
   srcSetData={[
     {
       src: 'https://dummyimage.com/300x200/f00/fff',
-      width: 300
+      width: 300,
     },
     {
       src: 'https://dummyimage.com/400x300/f00/fff',
-      width: 400
+      width: 400,
     },
     {
       src: 'https://dummyimage.com/800x600/f00/fff',
-      width: 800
+      width: 800,
     },
     {
       src: 'https://dummyimage.com/1100x800/f00/fff',
-      width: 1100
-    }
+      width: 1100,
+    },
   ]}
 />;
 ```
@@ -60,21 +60,21 @@ const imgSrcData = useSorcerer({
   srcSetData: [
     {
       src: 'https://dummyimage.com/300x200/f00/fff',
-      width: 300
+      width: 300,
     },
     {
       src: 'https://dummyimage.com/400x300/f00/fff',
-      width: 400
+      width: 400,
     },
     {
       src: 'https://dummyimage.com/800x600/f00/fff',
-      width: 800
+      width: 800,
     },
     {
       src: 'https://dummyimage.com/1100x800/f00/fff',
-      width: 1100
-    }
-  ]
+      width: 1100,
+    },
+  ],
 });
 
 <img {...imgSrcData} />;

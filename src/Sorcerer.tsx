@@ -7,12 +7,12 @@ export interface ReactSorcererProps extends UseSorcererConfig {
   style?: CSSProperties;
 }
 
-const Sorcerer = (props: ReactSorcererProps): ReactElement => {
+export function Sorcerer(props: ReactSorcererProps): ReactElement {
   const sorcererImageProps = useSorcerer({
     alt: props.alt,
     coverage: props.coverage,
     src: props.src,
-    srcSetData: props.srcSetData
+    srcSetData: props.srcSetData,
   });
 
   return (
@@ -23,6 +23,4 @@ const Sorcerer = (props: ReactSorcererProps): ReactElement => {
       style={props.style}
     />
   );
-};
-
-export default Sorcerer;
+}

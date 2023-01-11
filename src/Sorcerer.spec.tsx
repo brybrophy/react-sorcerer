@@ -1,29 +1,29 @@
+import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { shallow } from 'enzyme';
 
-import Sorcerer from './index';
+import { Sorcerer } from './Sorcerer';
 import {
   srcSetData,
   expectedAlt,
   expectedSizes,
   expectedSrc,
-  expectedSrcSet
+  expectedSrcSet,
 } from './testUtils/testData';
 
 describe('Sorcerer Component', () => {
   it('assigns the correct props', () => {
-    const wrapper = shallow(
+    render(
       <Sorcerer
         alt={expectedAlt}
         coverage={100}
         src={expectedSrc}
         srcSetData={srcSetData}
-      />
+      />,
     );
-
-    expect(wrapper.prop('alt')).toBe(expectedAlt);
-    expect(wrapper.prop('sizes')).toBe(expectedSizes);
-    expect(wrapper.prop('src')).toBe(expectedSrc);
-    expect(wrapper.prop('srcSet')).toBe(expectedSrcSet);
+    const image = screen.getByRole('img');
+    expect(image).toHaveProperty('alt', expectedAlt);
+    expect(image).toHaveProperty('sizes', expectedSizes);
+    expect(image).toHaveProperty('src', expectedSrc);
+    expect(image).toHaveProperty('srcset', expectedSrcSet);
   });
 });
