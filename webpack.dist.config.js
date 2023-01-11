@@ -5,12 +5,12 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   entry: path.join(__dirname, 'src/index.ts'),
   resolve: {
     extensions: ['.jsx', '.js', '.tsx', '.ts'],
-    modules: [path.join(__dirname, 'node_modules')]
+    modules: [path.join(__dirname, 'node_modules')],
   },
   module: {
     rules: [
@@ -19,8 +19,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          cacheDirectory: true
-        }
+          cacheDirectory: true,
+        },
       },
       {
         test: /\.tsx?$/,
@@ -29,13 +29,13 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              cacheDirectory: true
-            }
+              cacheDirectory: true,
+            },
           },
-          'ts-loader'
-        ]
-      }
-    ]
+          'ts-loader',
+        ],
+      },
+    ],
   },
   externals: [
     {
@@ -43,14 +43,14 @@ module.exports = {
         root: 'React',
         commonjs2: 'react',
         commonjs: 'react',
-        amd: 'react'
+        amd: 'react',
       },
       'react-dom': {
         root: 'ReactDom',
         commonjs2: 'react-dom',
         commonjs: 'react-dom',
-        amd: 'react-dom'
-      }
-    }
-  ]
+        amd: 'react-dom',
+      },
+    },
+  ],
 };
